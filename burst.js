@@ -4,20 +4,20 @@
    ===================================================== */
 
 const burstPhotos = [
-    "img/img20.jpeg",
-    "img/img21.jpeg",
-    "img/img23.jpeg",
-    "img/img25.jpeg",
-    "img/img26.jpeg",
-    "img/img27.jpeg",
-    "img/img28.jpeg",
-    "img/img29.jpeg",
-    "img/img30.jpeg",
-    "img/img31.jpeg",
-    "img/img32.jpeg",
-    "img/img33.jpeg",
-    "img/img34.jpeg",
-    "img/img35.jpeg"
+    "img20.jpeg",
+    "img21.jpeg",
+    "img23.jpeg",
+    "img25.jpeg",
+    "img26.jpeg",
+    "img27.jpeg",
+    "img28.jpeg",
+    "img29.jpeg",
+    "img30.jpeg",
+    "img31.jpeg",
+    "img32.jpeg",
+    "img33.jpeg",
+    "img34.jpeg",
+    "img35.jpeg"
 ];
 
 
