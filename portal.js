@@ -35,19 +35,19 @@ function showPortal() {
                 <!-- PALLAVI PHOTOS -->
 
                 <div class="portal-photo photo-one">
-                    <img src="img/img5.jpeg" alt="Pallavi">
+                    <img src="img5.jpeg" alt="Pallavi">
                 </div>
 
                 <div class="portal-photo photo-two">
-                    <img src="img/img2.jpeg" alt="Pallavi">
+                    <img src="img2.jpeg" alt="Pallavi">
                 </div>
 
                 <div class="portal-photo photo-three">
-                    <img src="img/img3.jpeg" alt="Pallavi">
+                    <img src="img3.jpeg" alt="Pallavi">
                 </div>
 
                 <div class="portal-photo photo-four">
-                    <img src="img/img4.jpeg" alt="Pallavi">
+                    <img src="img4.jpeg" alt="Pallavi">
                 </div>
 
             </div>
