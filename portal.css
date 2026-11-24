@@ -1,0 +1,534 @@
+/* =========================
+   PALLAVI PORTAL
+   ========================= */
+
+.portal-screen {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #050807;
+    color: #00ff66;
+
+    font-family: "Courier New", monospace;
+}
+
+
+/* =========================
+   PORTAL TEXT
+   ========================= */
+
+.portal-text {
+    position: absolute;
+    top: 8%;
+    z-index: 10;
+
+    text-align: center;
+}
+
+.portal-text .system-text {
+    font-size: 15px;
+    letter-spacing: 5px;
+    opacity: 0.6;
+    margin-bottom: 18px;
+}
+
+.portal-text h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    letter-spacing: 6px;
+    margin: 0;
+
+    text-shadow:
+        0 0 8px #00ff66,
+        0 0 20px #00ff66;
+}
+
+.portal-description {
+    margin-top: 18px;
+    font-size: 17px;
+    opacity: 0.7;
+}
+
+/* =========================
+   ENTER BUTTON
+   ========================= */
+
+.portal-button {
+    margin-top: 25px;
+
+    padding: 12px 25px;
+
+    background: transparent;
+    color: #00ff66;
+
+    border: 2px solid #00ff66;
+
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.portal-button:hover {
+    background-color: #00ff66;
+    color: #111;
+
+    box-shadow:
+        0 0 10px #00ff66,
+        0 0 30px #00ff66;
+}
+
+
+/* =========================
+   PORTAL
+   ========================= */
+
+.portal {
+    width: 330px;
+    height: 330px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 70px;
+}
+
+
+/* =========================
+   PORTAL GLOW
+   ========================= */
+
+.portal-glow {
+    position: absolute;
+
+    width: 270px;
+    height: 270px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 255, 102, 0.08);
+
+    box-shadow:
+        0 0 30px rgba(0, 255, 102, 0.4),
+        0 0 70px rgba(0, 255, 102, 0.25),
+        0 0 130px rgba(0, 255, 102, 0.12);
+
+    animation: portalGlow 2.5s ease-in-out infinite;
+}
+
+
+/* =========================
+   PORTAL RINGS
+   ========================= */
+
+.portal-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 2px solid #00ff66;
+
+    box-shadow:
+        0 0 10px #00ff66,
+        inset 0 0 10px rgba(0, 255, 102, 0.3);
+}
+
+
+.ring-one {
+    width: 220px;
+    height: 220px;
+
+    animation: rotateOne 8s linear infinite;
+}
+
+
+.ring-two {
+    width: 255px;
+    height: 255px;
+
+    border-style: dashed;
+
+    animation: rotateTwo 12s linear infinite;
+}
+
+
+.ring-three {
+    width: 290px;
+    height: 290px;
+
+    border-width: 1px;
+
+    opacity: 0.5;
+
+    animation: rotateOne 18s linear infinite;
+}
+
+
+/* =========================
+   PORTAL CORE
+   ========================= */
+
+.portal-core {
+    width: 175px;
+    height: 175px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(220, 255, 230, 0.9) 0%,
+            rgba(0, 255, 102, 0.4) 25%,
+            rgba(0, 100, 40, 0.25) 55%,
+            rgba(0, 0, 0, 0.95) 100%
+        );
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 102, 0.9),
+        0 0 60px rgba(0, 255, 102, 0.5),
+        inset 0 0 30px rgba(0, 255, 102, 0.6);
+
+    animation: corePulse 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   PORTAL PHOTOS
+   ========================= */
+.portal-photo {
+    position: absolute;
+
+    width: 125px;
+    height: 155px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f5f1e8;
+
+    border: 6px solid #f5f1e8;
+
+    color: #222;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.4);
+
+    z-index: 5;
+
+    overflow: hidden;
+}
+
+/* Actual images */
+
+.portal-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   PHOTO POSITIONS
+   ========================= */
+
+.portal-photo.photo-one {
+    top: -15px;
+    left: -30px;
+
+    transform: rotate(-12deg);
+
+    animation: photoFloatOne 4s ease-in-out infinite;
+}
+
+
+.portal-photo.photo-two {
+    top: -20px;
+    right: -35px;
+
+    transform: rotate(10deg);
+
+    animation: photoFloatTwo 5s ease-in-out infinite;
+}
+
+
+.portal-photo.photo-three {
+    bottom: -55px;
+    left: -30px;
+
+    transform: rotate(8deg);
+
+    animation: photoFloatThree 4.5s ease-in-out infinite;
+}
+
+
+.portal-photo.photo-four {
+    bottom: -60px;
+    right: -25px;
+
+    transform: rotate(-9deg);
+
+    animation: photoFloatFour 5.5s ease-in-out infinite;
+}
+
+/* =========================
+   BOTTOM TEXT
+   ========================= */
+
+.portal-entering {
+    position: absolute;
+
+    bottom: 7%;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.5;
+
+    animation: textBlink 1.8s ease-in-out infinite;
+}
+
+
+/* =========================
+   NORMAL ANIMATIONS
+   ========================= */
+
+@keyframes portalGlow {
+
+    0%,
+    100% {
+        transform: scale(0.95);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+
+@keyframes corePulse {
+
+    0%,
+    100% {
+        transform: scale(0.95);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+@keyframes rotateOne {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes rotateTwo {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes photoFloatOne {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-12deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-7deg);
+    }
+}
+
+
+@keyframes photoFloatTwo {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(10deg);
+    }
+
+    50% {
+        transform: translateY(12px) rotate(15deg);
+    }
+}
+
+
+@keyframes photoFloatThree {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(8deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+
+@keyframes photoFloatFour {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-9deg);
+    }
+
+    50% {
+        transform: translateY(15px) rotate(-14deg);
+    }
+}
+
+
+@keyframes textBlink {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+
+/* =========================
+   PORTAL OPENING ANIMATION
+   ========================= */
+
+.portal-opening .portal-core {
+    animation: portalExpand 2s ease-in forwards;
+}
+
+.portal-opening .portal-glow {
+    animation: glowExpand 2s ease-in forwards;
+}
+
+.portal-opening .portal-ring {
+    animation: ringExpand 2s ease-in forwards;
+}
+
+.portal-opening .portal-photo {
+    animation: photoEnterPortal 2s ease-in forwards;
+}
+
+.portal-opening .portal-text {
+    animation: fadePortalText 1s ease-in forwards;
+}
+
+.portal-opening .portal-entering {
+    animation: fadePortalText 1s ease-in forwards;
+}
+
+
+/* =========================
+   PORTAL OPENING KEYFRAMES
+   ========================= */
+
+@keyframes portalExpand {
+
+    0% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(8);
+    }
+}
+
+
+@keyframes glowExpand {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(8);
+        opacity: 1;
+    }
+}
+
+
+@keyframes ringExpand {
+
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(8) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+@keyframes photoEnterPortal {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+}
+
+
+@keyframes fadePortalText {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

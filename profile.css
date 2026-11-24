@@ -1,0 +1,1818 @@
+/* =====================================================
+   PALLAVI AESTHETIC PROFILE
+   ===================================================== */
+
+.profile-screen {
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(221, 194, 216, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(244, 207, 215, 0.5),
+            transparent 35%
+        ),
+        #f8f3ed;
+
+    color: #3d3438;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    animation: profileAppear 1.5s ease forwards;
+}
+
+
+/* =====================================================
+   PROFILE CONTENT
+   ===================================================== */
+
+.profile-content {
+    width: min(1000px, 90vw);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   SMALL TITLE
+   ===================================================== */
+
+.profile-eyebrow {
+    margin: 0 0 12px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #9b7180;
+}
+
+
+/* =====================================================
+   NAME
+   ===================================================== */
+
+.profile-name {
+    margin: 0;
+
+    font-size: clamp(55px, 9vw, 110px);
+
+    font-weight: normal;
+
+    letter-spacing: 8px;
+
+    color: #4a3940;
+}
+
+
+/* =====================================================
+   SUBTITLE
+   ===================================================== */
+
+.profile-subtitle {
+    margin: 8px 0 45px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    color: #987783;
+}
+
+
+/* =====================================================
+   MAIN PROFILE AREA
+   ===================================================== */
+
+.profile-layout {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 70px;
+
+    text-align: left;
+}
+
+
+/* =====================================================
+   MAIN PHOTO
+   ===================================================== */
+
+.profile-main-photo {
+    width: 330px;
+    height: 420px;
+
+    background: #fff;
+
+    padding: 12px;
+
+    box-shadow:
+        0 20px 45px rgba(80, 50, 60, 0.18);
+
+    transform: rotate(-3deg);
+
+    transition: transform 0.5s ease;
+}
+
+
+.profile-main-photo:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+
+.profile-main-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =====================================================
+   INFORMATION
+   ===================================================== */
+
+.profile-info {
+    width: 280px;
+}
+
+
+.profile-label {
+    margin: 0;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #a47b88;
+}
+
+
+.profile-value {
+    margin: 5px 0 28px;
+
+    font-size: 22px;
+
+    color: #493b41;
+}
+
+
+/* =====================================================
+   APPEAR ANIMATION
+   ===================================================== */
+
+@keyframes profileAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}/* =====================================================
+   ANIMATED AESTHETIC DECORATIONS
+   ===================================================== */
+
+.profile-doodle {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   CAMERA
+   ===================================================== */
+
+.camera-doodle {
+    top: 18%;
+    left: 8%;
+
+    animation: cameraFloat 5s ease-in-out infinite;
+}
+
+.camera-body {
+    width: 58px;
+    height: 40px;
+
+    border: 2px solid #8f6877;
+    border-radius: 8px;
+
+    position: relative;
+
+    background: rgba(255,255,255,0.35);
+}
+
+.camera-body::before {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 7px;
+
+    top: -7px;
+    left: 10px;
+
+    border: 2px solid #8f6877;
+    border-bottom: none;
+
+    border-radius: 4px 4px 0 0;
+}
+
+.camera-lens {
+    position: absolute;
+
+    width: 19px;
+    height: 19px;
+
+    border: 2px solid #8f6877;
+    border-radius: 50%;
+
+    left: 18px;
+    top: 9px;
+}
+
+.camera-lens::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    background: #c79aaa;
+
+    border-radius: 50%;
+
+    top: 4px;
+    left: 4px;
+}
+
+.camera-flash {
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    background: #c79aaa;
+
+    border-radius: 50%;
+
+    right: 7px;
+    top: 7px;
+}
+
+
+/* =====================================================
+   FLOWER
+   ===================================================== */
+
+.flower-doodle {
+    top: 14%;
+    right: 12%;
+
+    animation: flowerFloat 6s ease-in-out infinite;
+}
+
+.flower {
+    width: 55px;
+    height: 55px;
+
+    position: relative;
+}
+
+.flower span {
+    position: absolute;
+
+    width: 24px;
+    height: 32px;
+
+    background: #d5a7b5;
+
+    border-radius: 50%;
+
+    left: 15px;
+    top: 0;
+
+    transform-origin: 12px 28px;
+}
+
+.flower span:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.flower span:nth-child(2) {
+    transform: rotate(72deg);
+}
+
+.flower span:nth-child(3) {
+    transform: rotate(144deg);
+}
+
+.flower span:nth-child(4) {
+    transform: rotate(216deg);
+}
+
+.flower span:nth-child(5) {
+    transform: rotate(288deg);
+}
+
+.flower-center {
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #c28b72;
+
+    top: 21px;
+    left: 21px;
+}
+
+
+
+/* =====================================================
+   SPARKLE
+   ===================================================== */
+
+.sparkle-doodle {
+    top: 31%;
+    right: 8%;
+
+    color: #b98291;
+
+    font-size: 30px;
+
+    animation: sparkle 2.5s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   CHOCOLATE
+   ===================================================== */
+
+.chocolate-doodle {
+    bottom: 13%;
+    right: 14%;
+
+    animation: chocolateFloat 5s ease-in-out infinite;
+}
+
+.chocolate {
+    width: 45px;
+    height: 35px;
+
+    border: 2px solid #8f6877;
+
+    background: #c49a9a;
+
+    border-radius: 4px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 3px;
+
+    transform: rotate(7deg);
+}
+
+.chocolate span {
+    border: 1px solid rgba(255,255,255,0.35);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes cameraFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-12deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-7deg);
+    }
+
+}
+
+
+@keyframes flowerFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(8deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(-4deg);
+    }
+
+}
+
+
+
+
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: 0.25;
+        transform: scale(0.8) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15) rotate(20deg);
+    }
+
+}
+
+
+@keyframes chocolateFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(7deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(12deg);
+    }
+
+}/* =====================================================
+   EXTRA AESTHETIC DECORATIONS
+   ===================================================== */
+
+/* EXTRA CAMERA */
+
+.camera-doodle.camera-two {
+    top: 68%;
+    left: 79%;
+
+    transform: scale(0.75) rotate(10deg);
+
+    animation: cameraFloatTwo 6s ease-in-out infinite;
+}
+
+
+/* EXTRA FLOWER */
+
+.flower-doodle.flower-two {
+    top: 70%;
+    right: 8%;
+
+    transform: scale(0.75) rotate(-10deg);
+
+    animation: flowerFloatTwo 5.5s ease-in-out infinite;
+}
+
+
+/* EXTRA FLOWER */
+
+.flower-doodle.flower-three {
+    top: 25%;
+    left: 12%;
+
+    transform: scale(0.55) rotate(15deg);
+
+    animation: flowerFloatThree 7s ease-in-out infinite;
+}
+
+
+/* EXTRA CHOCOLATE */
+
+.chocolate-doodle.chocolate-two {
+    top: 22%;
+    right: 24%;
+
+    transform: scale(0.75) rotate(-12deg);
+
+    animation: chocolateFloatTwo 5.5s ease-in-out infinite;
+}
+
+
+/* EXTRA CHOCOLATE */
+
+.chocolate-doodle.chocolate-three {
+    bottom: 20%;
+    left: 5%;
+
+    transform: scale(0.6) rotate(15deg);
+
+    animation: chocolateFloatThree 6s ease-in-out infinite;
+}
+
+
+/* EXTRA SPARKLES */
+
+.sparkle-doodle.sparkle-two {
+    top: 15%;
+    left: 18%;
+
+    font-size: 20px;
+
+    animation: sparkleTwo 3s ease-in-out infinite;
+}
+
+
+.sparkle-doodle.sparkle-three {
+    bottom: 18%;
+    right: 25%;
+
+    font-size: 24px;
+
+    animation: sparkleThree 2.8s ease-in-out infinite;
+}
+
+
+.sparkle-doodle.sparkle-four {
+    top: 78%;
+    right: 89%;
+
+    font-size: 30px;
+
+    animation: sparkleFour 3.5s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   EXTRA ANIMATIONS
+   ===================================================== */
+
+@keyframes cameraFloatTwo {
+
+    0%, 100% {
+        transform: translateY(0) scale(0.75) rotate(10deg);
+    }
+
+    50% {
+        transform: translateY(-12px) scale(0.75) rotate(16deg);
+    }
+
+}
+
+
+@keyframes flowerFloatTwo {
+
+    0%, 100% {
+        transform: translateY(0) scale(0.75) rotate(-10deg);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(0.75) rotate(-3deg);
+    }
+
+}
+
+
+@keyframes flowerFloatThree {
+
+    0%, 100% {
+        transform: translateY(0) scale(0.55) rotate(15deg);
+    }
+
+    50% {
+        transform: translateY(-8px) scale(0.55) rotate(5deg);
+    }
+
+}
+
+
+@keyframes chocolateFloatTwo {
+
+    0%, 100% {
+        transform: translateY(0) scale(0.75) rotate(-12deg);
+    }
+
+    50% {
+        transform: translateY(-9px) scale(0.75) rotate(-5deg);
+    }
+
+}
+
+
+@keyframes chocolateFloatThree {
+
+    0%, 100% {
+        transform: translateY(0) scale(0.6) rotate(15deg);
+    }
+
+    50% {
+        transform: translateY(-8px) scale(0.6) rotate(21deg);
+    }
+
+}
+
+
+@keyframes sparkleTwo {
+
+    0%, 100% {
+        opacity: 0.25;
+        transform: scale(0.7) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15) rotate(25deg);
+    }
+
+}
+
+
+@keyframes sparkleThree {
+
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(-20deg);
+    }
+
+}
+
+
+@keyframes sparkleFour {
+
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.15);
+    }
+
+}/* =====================================================
+   MEMORY PAGES
+   ===================================================== */
+
+.memories-screen {
+
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(221, 194, 216, 0.4),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(244, 207, 215, 0.45),
+            transparent 35%
+        ),
+        #f8f3ed;
+
+    color: #493b41;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation: memoryAppear 1s ease forwards;
+}
+
+
+/* =====================================================
+   MEMORY CONTENT
+   ===================================================== */
+
+.memories-content {
+
+    width: min(1050px, 94vw);
+
+    height: 92vh;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =====================================================
+   TOP LABEL
+   ===================================================== */
+
+.memories-eyebrow {
+
+    position: absolute;
+
+    top: 3%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #a47b88;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   MEMORY TITLE
+   ===================================================== */
+
+.memories-content h1 {
+
+    margin: 0;
+
+    font-size: clamp(48px, 7vw, 78px);
+
+    font-weight: normal;
+
+    letter-spacing: 10px;
+
+    color: #4a3940;
+
+    z-index: 10;
+
+}
+
+
+/* =====================================================
+   PHOTOS AREA
+   ===================================================== */
+
+.memory-photos {
+
+    width: 850px;
+
+    max-width: 94vw;
+
+    height: 475px;
+
+    position: relative;
+
+    margin-top: 8px;
+
+}
+
+
+/* =====================================================
+   EVERY PHOTO
+   ===================================================== */
+
+.memory-photo {
+
+    position: absolute;
+
+    background: #fff;
+
+    padding: 10px;
+
+    box-shadow:
+        0 18px 40px rgba(80, 50, 60, 0.18);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+
+    box-sizing: border-box;
+
+}
+
+
+.memory-photo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+/* Hover */
+
+.memory-photo:hover {
+
+    transform:
+        rotate(0deg)
+        scale(1.06);
+
+    box-shadow:
+        0 25px 50px rgba(80, 50, 60, 0.25);
+
+    z-index: 20;
+
+}
+
+
+/* =====================================================
+   MEMORY 1
+   img6 = LANDSCAPE
+   img7 = LANDSCAPE
+   img8 = OTHER
+   ===================================================== */
+
+.memory-one .memory-photo-1 {
+
+    width: 330px;
+    height: 240px;
+
+    left: 280px;
+    top: 0px;
+
+    transform: rotate(-2deg);
+
+    z-index: 4;
+}
+
+
+.memory-one .memory-photo-2 {
+
+    width: 300px;
+    height: 215px;
+
+    left: 45px;
+    top: 185px;
+
+    transform: rotate(-8deg);
+
+    z-index: 4;
+}
+
+
+.memory-one .memory-photo-3 {
+
+    width: 235px;
+    height: 300px;
+
+    right: 45px;
+    top: 145px;
+
+    transform: rotate(8deg);
+
+    z-index: 5;
+}
+
+/* =====================================================
+   MEMORY 2
+   img9 LANDSCAPE + ROTATED LEFT
+   img10 LANDSCAPE
+   img11 / img12 additional
+   ===================================================== */
+
+.memory-two .memory-photo-1 {
+
+    width: 335px;
+    height: 245px;
+
+    left: 255px;
+    top: 5px;
+
+    transform: rotate(-3deg);
+
+    z-index: 1;
+}
+
+
+.memory-two .memory-photo-2 {
+
+    width: 270px;
+    height: 200px;
+
+    left: 50px;
+    top: 180px;
+
+    transform: rotate(-9deg);
+
+    z-index: 2;
+}
+
+
+.memory-two .memory-photo-3 {
+
+    width: 270px;
+    height: 200px;
+
+    right: 65px;
+    top: 190px;
+
+    transform: rotate(9deg);
+
+    z-index: 4;
+}
+
+
+/* =====================================================
+   MEMORY 3
+   img13
+   img14 LANDSCAPE
+   img15
+   ===================================================== */
+
+.memory-three .memory-photo-1 {
+
+    width: 245px;
+    height: 305px;
+
+    left: 55px;
+    top: 90px;
+
+    transform: rotate(-9deg);
+
+    z-index: 2;
+}
+
+
+.memory-three .memory-photo-2 {
+
+    width: 335px;
+    height: 245px;
+
+    left: 260px;
+    top: 45px;
+
+    transform: rotate(1deg);
+
+    z-index: 4;
+}
+
+
+.memory-three .memory-photo-3 {
+
+    width: 235px;
+    height: 295px;
+
+    right: 55px;
+    top: 105px;
+
+    transform: rotate(8deg);
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   MEMORY 4
+   img16
+   img17
+   img18 LANDSCAPE
+   ===================================================== */
+
+.memory-four .memory-photo-1 {
+
+    width: 245px;
+    height: 310px;
+
+    left: 70px;
+    top: 70px;
+
+    transform: rotate(-7deg);
+
+    z-index: 2;
+}
+
+
+.memory-four .memory-photo-2 {
+
+    width: 255px;
+    height: 320px;
+
+    left: 300px;
+    top: 35px;
+
+    transform: rotate(2deg);
+
+    z-index: 4;
+}
+
+
+.memory-four .memory-photo-3 {
+
+    width: 320px;
+    height: 235px;
+
+    right: 35px;
+    bottom: 50px;
+
+    transform: rotate(9deg);
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   MEMORY PHRASE
+   ===================================================== */
+
+.memory-phrase {
+
+    position: absolute;
+
+    margin: 0;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    color: #765963;
+
+    z-index: 15;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   PHRASE POSITIONS
+   ===================================================== */
+
+.memory-one .memory-phrase {
+
+    bottom: 5%;
+
+    right: 8%;
+
+    transform: rotate(-3deg);
+
+}
+
+
+.memory-two .memory-phrase {
+
+    top: 19%;
+
+    left: 3%;
+
+    transform: rotate(-7deg);
+
+}
+
+
+.memory-three .memory-phrase {
+
+    bottom: 6%;
+
+    left: 7%;
+
+    transform: rotate(4deg);
+
+}
+
+
+.memory-four .memory-phrase {
+
+    top: 27%;
+
+    right: 3%;
+
+    transform: rotate(5deg);
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+.memory-navigation {
+
+    position: absolute;
+
+    bottom: 1.5%;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.memory-navigation button {
+
+    width: 48px;
+
+    height: 48px;
+
+    padding: 0;
+
+    margin: 0;
+
+    background: transparent;
+
+    border: 1px transparent solid;
+
+    color: #8f6877;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+}
+
+
+.memory-navigation button:hover {
+
+    background: #9b7180;
+
+    color: white;
+
+    transform: scale(1.08);
+
+}
+
+
+/* =====================================================
+   PAGE TRANSITION
+   ===================================================== */
+
+@keyframes memoryAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(1.04);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}/* =====================================================
+   MEMORY SPACE DECORATIONS
+   ===================================================== */
+
+.memory-doodle {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   MEMORY CAMERA 1
+   ===================================================== */
+
+.memory-camera-one {
+    top: 10%;
+    left: 4%;
+
+    animation:
+        memoryCameraOrbitOne
+        13s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   MEMORY CAMERA 2
+   ===================================================== */
+
+.memory-camera-two {
+    top: 70%;
+    right: 5%;
+
+    transform: scale(0.75);
+
+    animation:
+        memoryCameraOrbitTwo
+        17s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   MEMORY FLOWER 1
+   ===================================================== */
+
+.memory-flower-one {
+    top: 8%;
+    right: 8%;
+
+    transform: scale(0.75);
+
+    animation:
+        memoryFlowerOrbitOne
+        15s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   MEMORY FLOWER 2
+   ===================================================== */
+
+.memory-flower-two {
+    bottom: 9%;
+    left: 8%;
+
+    transform: scale(0.6);
+
+    animation:
+        memoryFlowerOrbitTwo
+        18s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   MEMORY FLOWER 3
+   ===================================================== */
+
+.memory-flower-three {
+    top: 48%;
+    left: 2%;
+
+    transform: scale(0.45);
+
+    animation:
+        memoryFlowerOrbitThree
+        20s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   MEMORY SPARKLES
+   ===================================================== */
+
+.memory-sparkle-one {
+    top: 18%;
+    left: 20%;
+
+    font-size: 25px;
+
+    animation:
+        memorySparkleOrbitOne
+        8s
+        ease-in-out
+        infinite;
+}
+
+
+.memory-sparkle-two {
+    top: 13%;
+    right: 25%;
+
+    font-size: 18px;
+
+    animation:
+        memorySparkleOrbitTwo
+        11s
+        ease-in-out
+        infinite;
+}
+
+
+.memory-sparkle-three {
+    bottom: 20%;
+    right: 20%;
+
+    font-size: 27px;
+
+    animation:
+        memorySparkleOrbitThree
+        9s
+        ease-in-out
+        infinite;
+}
+
+
+.memory-sparkle-four {
+    bottom: 12%;
+    left: 25%;
+
+    font-size: 21px;
+
+    animation:
+        memorySparkleOrbitFour
+        12s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   MEMORY CHOCOLATES
+   ===================================================== */
+
+.memory-chocolate-one {
+    top: 25%;
+    right: 3%;
+
+    transform: scale(0.65);
+
+    animation:
+        memoryChocolateOrbitOne
+        16s
+        ease-in-out
+        infinite;
+}
+
+
+.memory-chocolate-two {
+    bottom: 18%;
+    right: 7%;
+
+    transform: scale(0.55);
+
+    animation:
+        memoryChocolateOrbitTwo
+        19s
+        ease-in-out
+        infinite;
+}
+
+
+.memory-chocolate-three {
+    bottom: 15%;
+    left: 3%;
+
+    transform: scale(0.5);
+
+    animation:
+        memoryChocolateOrbitThree
+        14s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   CAMERA SPACE MOTION
+   ===================================================== */
+
+@keyframes memoryCameraOrbitOne {
+
+    0% {
+        transform:
+            translate(0, 0)
+            rotate(-15deg);
+    }
+
+    25% {
+        transform:
+            translate(35px, -20px)
+            rotate(-4deg);
+    }
+
+    50% {
+        transform:
+            translate(65px, 15px)
+            rotate(12deg);
+    }
+
+    75% {
+        transform:
+            translate(25px, 35px)
+            rotate(4deg);
+    }
+
+    100% {
+        transform:
+            translate(0, 0)
+            rotate(-15deg);
+    }
+
+}
+
+
+@keyframes memoryCameraOrbitTwo {
+
+    0% {
+        transform:
+            scale(0.75)
+            translate(0, 0)
+            rotate(10deg);
+    }
+
+    30% {
+        transform:
+            scale(0.75)
+            translate(-30px, -25px)
+            rotate(-5deg);
+    }
+
+    60% {
+        transform:
+            scale(0.75)
+            translate(-55px, 15px)
+            rotate(-18deg);
+    }
+
+    100% {
+        transform:
+            scale(0.75)
+            translate(0, 0)
+            rotate(10deg);
+    }
+
+}
+
+
+/* =====================================================
+   FLOWER SPACE MOTION
+   ===================================================== */
+
+@keyframes memoryFlowerOrbitOne {
+
+    0% {
+        transform:
+            scale(0.75)
+            translate(0, 0)
+            rotate(8deg);
+    }
+
+    25% {
+        transform:
+            scale(0.75)
+            translate(-30px, 25px)
+            rotate(35deg);
+    }
+
+    50% {
+        transform:
+            scale(0.75)
+            translate(-5px, 55px)
+            rotate(70deg);
+    }
+
+    75% {
+        transform:
+            scale(0.75)
+            translate(30px, 25px)
+            rotate(40deg);
+    }
+
+    100% {
+        transform:
+            scale(0.75)
+            translate(0, 0)
+            rotate(8deg);
+    }
+
+}
+
+
+@keyframes memoryFlowerOrbitTwo {
+
+    0% {
+        transform:
+            scale(0.6)
+            translate(0, 0)
+            rotate(-10deg);
+    }
+
+    30% {
+        transform:
+            scale(0.6)
+            translate(35px, -15px)
+            rotate(15deg);
+    }
+
+    60% {
+        transform:
+            scale(0.6)
+            translate(60px, 20px)
+            rotate(50deg);
+    }
+
+    100% {
+        transform:
+            scale(0.6)
+            translate(0, 0)
+            rotate(-10deg);
+    }
+
+}
+
+
+@keyframes memoryFlowerOrbitThree {
+
+    0% {
+        transform:
+            scale(0.45)
+            translate(0, 0)
+            rotate(15deg);
+    }
+
+    50% {
+        transform:
+            scale(0.45)
+            translate(30px, -40px)
+            rotate(80deg);
+    }
+
+    100% {
+        transform:
+            scale(0.45)
+            translate(0, 0)
+            rotate(15deg);
+    }
+
+}
+
+
+/* =====================================================
+   SPARKLE SPACE MOTION
+   ===================================================== */
+
+@keyframes memorySparkleOrbitOne {
+
+    0% {
+        opacity: 0.2;
+        transform:
+            translate(0, 0)
+            scale(0.7)
+            rotate(0deg);
+    }
+
+    25% {
+        opacity: 0.9;
+        transform:
+            translate(30px, -20px)
+            scale(1)
+            rotate(90deg);
+    }
+
+    50% {
+        opacity: 0.35;
+        transform:
+            translate(60px, 5px)
+            scale(0.75)
+            rotate(180deg);
+    }
+
+    75% {
+        opacity: 1;
+        transform:
+            translate(25px, 35px)
+            scale(1.15)
+            rotate(270deg);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform:
+            translate(0, 0)
+            scale(0.7)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes memorySparkleOrbitTwo {
+
+    0% {
+        opacity: 0.2;
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-35px, 30px) rotate(180deg) scale(1.2);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform: translate(0, 0) rotate(360deg);
+    }
+
+}
+
+
+@keyframes memorySparkleOrbitThree {
+
+    0% {
+        opacity: 0.25;
+        transform:
+            translate(0, 0)
+            scale(0.8)
+            rotate(0deg);
+    }
+
+    35% {
+        opacity: 1;
+        transform:
+            translate(-30px, -30px)
+            scale(1.2)
+            rotate(90deg);
+    }
+
+    70% {
+        opacity: 0.35;
+        transform:
+            translate(-60px, 10px)
+            scale(0.7)
+            rotate(220deg);
+    }
+
+    100% {
+        opacity: 0.25;
+        transform:
+            translate(0, 0)
+            scale(0.8)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes memorySparkleOrbitFour {
+
+    0% {
+        opacity: 0.2;
+        transform:
+            translate(0, 0)
+            scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(45px, -25px)
+            scale(1.15)
+            rotate(180deg);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform:
+            translate(0, 0)
+            scale(0.7);
+    }
+
+}
+
+
+/* =====================================================
+   CHOCOLATE SPACE MOTION
+   ===================================================== */
+
+@keyframes memoryChocolateOrbitOne {
+
+    0% {
+        transform:
+            scale(0.65)
+            translate(0, 0)
+            rotate(-12deg);
+    }
+
+    50% {
+        transform:
+            scale(0.65)
+            translate(-40px, 35px)
+            rotate(20deg);
+    }
+
+    100% {
+        transform:
+            scale(0.65)
+            translate(0, 0)
+            rotate(-12deg);
+    }
+
+}
+
+
+@keyframes memoryChocolateOrbitTwo {
+
+    0% {
+        transform:
+            scale(0.55)
+            translate(0, 0)
+            rotate(5deg);
+    }
+
+    50% {
+        transform:
+            scale(0.55)
+            translate(-30px, -35px)
+            rotate(-20deg);
+    }
+
+    100% {
+        transform:
+            scale(0.55)
+            translate(0, 0)
+            rotate(5deg);
+    }
+
+}
+
+
+@keyframes memoryChocolateOrbitThree {
+
+    0% {
+        transform:
+            scale(0.5)
+            translate(0, 0)
+            rotate(15deg);
+    }
+
+    30% {
+        transform:
+            scale(0.5)
+            translate(35px, -20px)
+            rotate(35deg);
+    }
+
+    65% {
+        transform:
+            scale(0.5)
+            translate(60px, 15px)
+            rotate(-5deg);
+    }
+
+    100% {
+        transform:
+            scale(0.5)
+            translate(0, 0)
+            rotate(15deg);
+    }
+
+}

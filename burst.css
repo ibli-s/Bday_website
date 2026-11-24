@@ -1,0 +1,1270 @@
+/* =====================================================
+   BURST CAPTURE
+   ===================================================== */
+
+.burst-screen {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 255, 255, 0.9),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #f7edf5,
+            #eee4ef,
+            #f8f1e9
+        );
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =====================================================
+   HEADING
+   ===================================================== */
+
+.burst-heading {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    color: #5c4a58;
+
+    letter-spacing: 3px;
+
+    z-index: 50;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+}
+
+.burst-heading span {
+    display: block;
+    font-size: 18px;
+}
+
+.burst-heading small {
+    display: block;
+
+    margin-top: 6px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.55;
+}
+
+.burst-screen.started .burst-heading {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   FILM STAGE
+   ===================================================== */
+
+.film-stage {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 10;
+}
+
+
+/* =====================================================
+   FILM STRIPS
+   ===================================================== */
+
+.film-strip {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0;
+
+    width: max-content;
+    height: 300px;
+
+    background: #202020;
+
+    box-shadow:
+        0 20px 50px
+        rgba(50, 35, 50, 0.25);
+
+    will-change: transform;
+}
+
+
+/* =====================================================
+   LEFT STRIP
+   ===================================================== */
+
+.film-strip-left {
+    top: 12%;
+    left: -1800px;
+
+    animation:
+        filmMoveRight
+        18s
+        linear
+        infinite;
+}
+
+
+/* =====================================================
+   RIGHT STRIP
+   ===================================================== */
+
+.film-strip-right {
+    top: 58%;
+    right: -1800px;
+
+    animation:
+        filmMoveLeft
+        18s
+        linear
+        infinite;
+}
+
+
+/* =====================================================
+   FILM FRAME
+   ===================================================== */
+
+.film-frame {
+    position: relative;
+
+    flex: 0 0 220px;
+
+    width: 220px;
+    height: 276px;
+
+    padding: 17px 12px;
+
+    background: #202020;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FILM PHOTO
+   ===================================================== */
+
+.film-photo {
+    width: 196px;
+    height: 240px;
+
+    overflow: hidden;
+
+    border: 2px solid #111;
+
+    background: #111;
+}
+
+.film-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =====================================================
+   SPROCKET HOLES
+   ===================================================== */
+
+.film-frame::before,
+.film-frame::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    height: 10px;
+
+    background:
+        repeating-linear-gradient(
+            to right,
+            transparent 0,
+            transparent 13px,
+            #e9e9e9 13px,
+            #e9e9e9 24px,
+            transparent 24px,
+            transparent 38px
+        );
+}
+
+.film-frame::before {
+    top: 2px;
+}
+
+.film-frame::after {
+    bottom: 2px;
+}
+
+
+/* =====================================================
+   FRAME NUMBER
+   ===================================================== */
+
+.frame-number {
+    position: absolute;
+
+    bottom: 10px;
+    right: 12px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   MOVEMENT
+   ===================================================== */
+
+@keyframes filmMoveRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(2800px);
+    }
+}
+
+@keyframes filmMoveLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-2800px);
+    }
+}
+
+
+/* =====================================================
+   CAMERA BUTTON
+   ===================================================== */
+
+.burst-camera-button {
+    position: absolute;
+
+    left: 50%;
+    bottom: 55px;
+
+    transform: translateX(-50%);
+
+    z-index: 100;
+
+    padding: 13px 24px;
+
+    border: 1px solid #6d5969;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    color: #5c4a58;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        opacity 0.4s ease;
+}
+
+.burst-camera-button:hover {
+    background: #fff;
+
+    transform:
+        translateX(-50%)
+        scale(1.05);
+}
+
+.camera-icon {
+    display: inline-block;
+
+    margin-right: 8px;
+
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   AFTER CAMERA CLICK
+   ===================================================== */
+
+.burst-screen.captured .film-strip-left {
+    animation-play-state: paused;
+}
+
+.burst-screen.captured .film-strip-right {
+    animation-play-state: paused;
+}
+
+.burst-screen.captured .burst-camera-button {
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   PHOTOBOOTH STAGE
+   ===================================================== */
+
+.photobooth-stage {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 80;
+
+    opacity: 0;
+
+    transform:
+        scale(0.65)
+        rotate(-3deg);
+
+    pointer-events: none;
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s cubic-bezier(.2, .8, .2, 1);
+}
+
+.burst-screen.transforming .photobooth-stage {
+    opacity: 1;
+
+    transform:
+        scale(1)
+        rotate(0deg);
+}
+
+
+/* =====================================================
+   HIDE FILM AFTER TRANSFORM
+   ===================================================== */
+
+.burst-screen.transforming .film-stage {
+    opacity: 0;
+
+    transform: scale(1.08);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+
+/* =====================================================
+   FINAL BIRTHDAY LAYOUT
+   ===================================================== */
+
+.birthday-finale {
+    width: 900px;
+
+    max-width: 90vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 80px;
+
+    position: relative;
+}
+
+
+/* =====================================================
+   PHOTOBOOTH STRIP - LEFT
+   ===================================================== */
+
+.photobooth-strip {
+    width: 260px;
+
+    padding:
+        14px
+        14px
+        22px;
+
+    box-sizing: border-box;
+
+    background: #fffdf9;
+
+    box-shadow:
+        0 25px 60px
+        rgba(50, 35, 50, 0.25);
+
+    position: relative;
+
+    transform: rotate(-4deg);
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   LITTLE TAPE
+   ===================================================== */
+
+.photobooth-strip::before {
+    content: "";
+
+    position: absolute;
+
+    top: -9px;
+
+    left: 50%;
+
+    width: 130px;
+
+    height: 20px;
+
+    background:
+        rgba(221, 194, 216, 0.7);
+
+    transform:
+        translateX(-50%)
+        rotate(2deg);
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   SINGLE VERTICAL PHOTO STRIP
+   ===================================================== */
+
+.booth-photos {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   LANDSCAPE PHOTO
+   ===================================================== */
+
+.booth-photo {
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    height: auto;
+
+    overflow: hidden;
+
+    background: #eee;
+
+    border:
+        1px solid rgba(60, 45, 60, 0.12);
+}
+
+.booth-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    background: #eee;
+}
+/* =====================================================
+   CAPTION ON THE PHOTO STRIP
+   ===================================================== */
+
+.photobooth-strip::after {
+    content:
+        "apparently, one picture was never enough.";
+
+    display: block;
+
+    margin-top: 16px;
+
+    padding:
+        0
+        5px;
+
+    text-align: center;
+
+    color: #554650;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.4px;
+
+    font-style: italic;
+}
+
+
+/* =====================================================
+   BIRTHDAY MESSAGE - RIGHT
+   ===================================================== */
+
+.birthday-message {
+    width: 430px;
+
+    min-height: 500px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #554650;
+}
+
+
+/* =====================================================
+   LEVEL TEXT
+   ===================================================== */
+
+.birthday-small {
+    margin:
+        0
+        0
+        10px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: #806c79;
+
+    opacity: 0;
+
+    animation:
+        gentleFade
+        1s
+        ease
+        0.4s
+        forwards;
+}
+
+
+/* =====================================================
+   MAIN BIRTHDAY TEXT
+   ===================================================== */
+
+.birthday-message h1 {
+    margin: 0;
+
+    font-size: 54px;
+
+    line-height: 0.95;
+
+    letter-spacing: 2px;
+
+    font-weight: normal;
+
+    color: #554650;
+
+    opacity: 0;
+
+    animation:
+        birthdayPop
+        1.2s
+        cubic-bezier(.2, .8, .2, 1)
+        0.3s
+        forwards;
+}
+
+.birthday-message h1 span {
+    display: block;
+
+    font-size: 60px;
+
+    margin-top: 5px;
+
+    color: #806278;
+}
+
+
+/* =====================================================
+   LINE
+   ===================================================== */
+
+.birthday-line {
+    width: 120px;
+
+    height: 1px;
+
+    background:
+        rgba(92, 74, 88, 0.4);
+
+    margin:
+        20px
+        0
+        18px;
+
+    transform: scaleX(0);
+
+    animation:
+        lineGrow
+        1s
+        ease
+        0.7s
+        forwards;
+}
+
+
+/* =====================================================
+   BIRTHDAY NOTE
+   ===================================================== */
+
+.birthday-note {
+    margin:
+        20px
+        0
+        0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    letter-spacing: 1px;
+
+    color: #806c79;
+
+    opacity: 0;
+
+    animation:
+        noteAppear
+        1.2s
+        ease
+        1.1s
+        forwards;
+}
+
+
+/* =====================================================
+   CAKE
+   ===================================================== */
+
+.birthday-cake {
+    position: relative;
+
+    width: 150px;
+
+    height: 125px;
+
+    margin-bottom: 5px;
+
+    animation:
+        cakeFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   CAKE BODY
+   ===================================================== */
+
+.cake-body {
+    position: absolute;
+
+    bottom: 15px;
+    left: 25px;
+
+    width: 100px;
+    height: 55px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #e7c9d9,
+            #d9b5cb
+        );
+
+    border-radius:
+        8px
+        8px
+        12px
+        12px;
+
+    box-shadow:
+        0 8px 15px
+        rgba(90, 60, 80, 0.15);
+}
+
+
+/* =====================================================
+   CAKE TOP
+   ===================================================== */
+
+.cake-top {
+    position: absolute;
+
+    top: 40px;
+    left: 20px;
+
+    width: 110px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: #f7e6ef;
+
+    z-index: 3;
+
+    box-shadow:
+        inset 0 -3px 0
+        rgba(150, 110, 140, 0.12);
+}
+
+
+/* =====================================================
+   CAKE CREAM
+   ===================================================== */
+
+.cake-cream {
+    position: absolute;
+
+    width: 15px;
+    height: 18px;
+
+    border-radius:
+        0
+        0
+        50%
+        50%;
+
+    background: #fff7fb;
+
+    top: 8px;
+}
+
+.cream-one {
+    left: 18px;
+}
+
+.cream-two {
+    left: 43px;
+}
+
+.cream-three {
+    right: 18px;
+}
+
+
+/* =====================================================
+   CAKE PLATE
+   ===================================================== */
+
+.cake-plate {
+    position: absolute;
+
+    bottom: 8px;
+    left: 12px;
+
+    width: 126px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #fffdfb;
+
+    box-shadow:
+        0 4px 8px
+        rgba(70, 50, 70, 0.15);
+}
+
+
+/* =====================================================
+   CANDLES
+   ===================================================== */
+
+.cake-candle {
+    position: absolute;
+
+    top: 12px;
+
+    width: 7px;
+    height: 32px;
+
+    border-radius: 2px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #d5a9c5 0,
+            #d5a9c5 4px,
+            #fff4fa 4px,
+            #fff4fa 8px
+        );
+
+    z-index: 5;
+}
+
+.candle-one {
+    left: 48px;
+}
+
+.candle-two {
+    left: 72px;
+}
+
+.candle-three {
+    left: 96px;
+}
+
+
+/* =====================================================
+   FLAMES
+   ===================================================== */
+
+.cake-candle span {
+    position: absolute;
+
+    width: 8px;
+    height: 12px;
+
+    left: -1px;
+    top: -12px;
+
+    border-radius:
+        50%
+        50%
+        45%
+        45%;
+
+    background: #f1bd65;
+
+    box-shadow:
+        0 0 10px
+        rgba(241, 189, 101, 0.8);
+
+    animation:
+        flameFlicker
+        0.7s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* =====================================================
+   FLOATING STARS
+   ===================================================== */
+
+.floating-star {
+    position: absolute;
+
+    color: #b794aa;
+
+    font-size: 22px;
+
+    animation:
+        starFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+.star-one {
+    top: 75px;
+    left: 15px;
+}
+
+.star-two {
+    top: 145px;
+    right: 20px;
+
+    animation-delay: 0.8s;
+}
+
+.star-three {
+    bottom: 100px;
+    left: 30px;
+
+    animation-delay: 1.4s;
+}
+
+.star-four {
+    bottom: 60px;
+    right: 45px;
+
+    font-size: 28px;
+
+    animation-delay: 0.4s;
+}
+
+
+/* =====================================================
+   BALLOONS
+   ===================================================== */
+
+.balloon {
+    position: absolute;
+
+    width: 32px;
+    height: 42px;
+
+    border-radius:
+        50%
+        50%
+        48%
+        48%;
+
+    opacity: 0.8;
+
+    animation:
+        balloonFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+.balloon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: 60px;
+
+    background:
+        rgba(100, 80, 100, 0.3);
+
+    top: 40px;
+    left: 16px;
+}
+
+.balloon-one {
+    top: 25px;
+    right: 55px;
+
+    background:
+        rgba(214, 181, 204, 0.75);
+}
+
+.balloon-two {
+    top: 85px;
+    right: -5px;
+
+    width: 27px;
+    height: 36px;
+
+    background:
+        rgba(238, 205, 218, 0.75);
+
+    animation-delay: 1s;
+}
+
+.balloon-three {
+    bottom: 45px;
+    left: -5px;
+
+    width: 27px;
+    height: 37px;
+
+    background:
+        rgba(194, 181, 216, 0.7);
+
+    animation-delay: 1.8s;
+}
+
+
+/* =====================================================
+   CONFETTI
+   ===================================================== */
+
+.birthday-confetti {
+    position: absolute;
+
+    bottom: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 22px;
+
+    color: #b794aa;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    animation:
+        confettiFloat
+        2.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes birthdayPop {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes noteAppear {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    100% {
+        opacity: 0.8;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes lineGrow {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+
+@keyframes gentleFade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes cakeFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+@keyframes flameFlicker {
+    0% {
+        transform:
+            scale(0.9)
+            rotate(-3deg);
+    }
+
+    100% {
+        transform:
+            scale(1.15)
+            rotate(3deg);
+    }
+}
+
+
+@keyframes starFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0.55;
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(12deg);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes balloonFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-2deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(3deg);
+    }
+}
+
+
+@keyframes confettiFloat {
+    0%,
+    100% {
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            translateY(-8px);
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .birthday-finale {
+        width: 94vw;
+
+        gap: 35px;
+    }
+
+    .photobooth-strip {
+        width: 240px;
+    }
+
+    .birthday-message {
+        width: 350px;
+    }
+
+    .birthday-message h1 {
+        font-size: 42px;
+    }
+
+    .birthday-message h1 span {
+        font-size: 48px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .birthday-finale {
+        flex-direction: column;
+
+        gap: 15px;
+
+        transform: scale(0.75);
+    }
+
+    .photobooth-strip {
+        width: 260px;
+    }
+
+    .birthday-message {
+        min-height: 380px;
+    }
+
+    .birthday-message h1 {
+        font-size: 34px;
+    }
+
+    .birthday-message h1 span {
+        font-size: 38px;
+    }
+
+    .birthday-note {
+        font-size: 9px;
+    }
+}
