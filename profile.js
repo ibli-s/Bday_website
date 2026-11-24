@@ -166,7 +166,7 @@ function showProfile() {
                     <div class="profile-main-photo" onclick="showMemories()">
 
                         <img
-                            src="img/img1.jpeg"
+                            src="img1.jpeg"
                             alt="Pallavi"
                         >
 
@@ -226,9 +226,9 @@ const memories = [
     {
         phrase: "All our chaos",
         photos: [
-            "img/img14.jpeg",
-            "img/img7.jpeg",
-            "img/img8.jpeg"
+            "img14.jpeg",
+            "img7.jpeg",
+            "img8.jpeg"
         ],
         layout: "memory-one"
     },
@@ -237,9 +237,9 @@ const memories = [
     {
         phrase: "and somehow we survived this",
         photos: [
-            "img/img6.jpeg",
-            "img/img10.jpeg",
-            "img/img12.jpeg"
+            "img6.jpeg",
+            "img10.jpeg",
+            "img12.jpeg"
         ],
         layout: "memory-two"
     },
@@ -248,9 +248,9 @@ const memories = [
     {
         phrase: "we've made sooooo many core memories.",
         photos: [
-            "img/img11.jpeg",
-            "img/img13.jpeg",
-            "img/img15.jpeg"
+            "img11.jpeg",
+            "img13.jpeg",
+            "img15.jpeg"
         ],
         layout: "memory-three"
     },
@@ -259,9 +259,9 @@ const memories = [
     {
         phrase: "I would do it all over again, will you ?",
         photos: [
-            "img/img17.jpeg",
-            "img/img16.jpeg",
-            "img/img18.jpeg"
+            "img17.jpeg",
+            "img16.jpeg",
+            "img18.jpeg"
         ],
         layout: "memory-four"
     }
